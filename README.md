@@ -1,2 +1,4 @@
 # Hotel_Booking_App
-#AN APP TO BOOK HOTELS ONLINE
+An Applicaion to make your holidays easier with all hotel bookings online.
+key features in this application:
+1.User Registration API.

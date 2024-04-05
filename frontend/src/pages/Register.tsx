@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 
-type RegisterFormData={
+export type RegisterFormData={
     firstName:string,
     lastName:string,
     email:string,
@@ -13,6 +13,9 @@ const Register=()=>{
     
     const {register ,watch,handleSubmit,formState:{errors}}=useForm<RegisterFormData>();
     
+
+    
+
     const onSubmit=handleSubmit((data)=>{
         console.log(data);
     })

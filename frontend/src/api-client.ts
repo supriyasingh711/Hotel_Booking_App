@@ -14,4 +14,5 @@ export const register=async (formData:RegisterFormData)=>{
     if(!response.ok){
         throw new Error(responseBody.message)
     }
+    
 }

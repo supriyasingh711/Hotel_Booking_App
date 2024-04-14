@@ -33,6 +33,7 @@ const SignIn=()=>{
 
         },onError:(error:Error)=>{
                 //show the toast
+                showToast({message:"unsuccessful log in",type:"ERROR"})
 
         }
             })

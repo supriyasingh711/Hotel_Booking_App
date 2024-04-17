@@ -16,6 +16,7 @@ export const register=async (formData:RegisterFormData)=>{
     if(!response.ok){
         throw new Error(responseBody.message)
     }
+   
 }
 export const signIn=async (FormData:SignInFormData)=>{
     const response=await fetch(`${API_BASE_URL}/api/auth/login`,{
@@ -48,6 +49,6 @@ export const signOut=async()=>{
         method:"POST"
     })
     if(!response.ok){
-        throw  new Error("Error duting signout");
+        throw  new Error("Error during signout");
     }
 }

@@ -8,7 +8,6 @@ import verifyToken from "../middleware/auth";
 
 const router=express.Router();
 router.post("/login",[
-
     check("email","email is required").isEmail(),
     check("password","password with 6 or more character is required").isLength({
         min:6,

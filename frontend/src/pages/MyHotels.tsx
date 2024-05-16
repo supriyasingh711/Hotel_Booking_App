@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import * as apiClient from "../api-client"
 import {BsBuilding, BsMap} from 'react-icons/bs'
 import { BiHotel, BiMoney, BiStar } from "react-icons/bi";
+import { HotelType } from "../../../backend/src/shared/types";
 
 const MyHotels=()=>{
     const {data:hotelData}=useQuery("fetchMyHotels",apiClient.fetchMyHotels,{
@@ -14,6 +15,8 @@ const MyHotels=()=>{
     if(!hotelData){
         return <span>No Hotels found</span>
     }
+    const hotelDataArray: HotelType[] = Object.values(hotelData);
+
     return (
         <div className="space-y-5">
             <span  className="flex justify-between">
@@ -22,7 +25,7 @@ const MyHotels=()=>{
                     Add Hotel</Link>
             </span>
             <div className="grid grid-cols-1 gap-8">
-                {hotelData?.map((hotel)=>(
+                {hotelDataArray?.map((hotel)=>(
                         <div className="flex flex-col justify-between border border-slate-300 rounded-lg p-8 gap-5">
                                 <h2 className="text-2xl font-bold ">{hotel.name}</h2>
                                 <div className="whitespace-pre-line">{hotel.description}</div>
